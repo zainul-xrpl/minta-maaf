@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayo Makan Seblak!</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", sans-serif;
+      background: linear-gradient(135deg, #ff7f7f, #ffb347);
+      text-align: center;
+      color: white;
+      padding: 50px 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .btn {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1.2em;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+    .yes:hover {
+      background: #e63e5a;
+    }
+    .no {
+      background: #555;
+      color: #fff;
+      position: relative;
+    }
+    #bowl {
+      font-size: 4em;
+      margin-top: 20px;
+      display: none;
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <h1>mau makan seblak bareng nggak. di rumah babe? 🌶️🍲</h1>
+  <button class="btn yes" onclick="showSeblak()">Mau!</button>
+  <button class="btn no" id="noBtn" onmouseover="moveBtn()">Nggak</button>
+
+  <div id="bowl">🍲🔥🌶️</div>
+
+  <script>
+    function showSeblak() {
+      document.getElementById("bowl").style.display = "block";
+      alert("Yeay! Kita makan seblak bareng 🤭🔥");
+    }
+    function moveBtn() {
+      const btn = document.getElementById("noBtn");
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      btn.style.position = "absolute";
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
+    }
+  </script>
+</body>
+</html>
